@@ -53,6 +53,11 @@ public class RefundUserInfoDTO {
 	private String bank_name;
 	private String user_account;
 	
+	
+	public RefundUserInfoDTO() {
+		super();
+	}
+
 	public RefundUserInfoDTO(RefundUserInfoVO vo) {
 		this.loginID = vo.getLoginID();
 		this.name = vo.getName();

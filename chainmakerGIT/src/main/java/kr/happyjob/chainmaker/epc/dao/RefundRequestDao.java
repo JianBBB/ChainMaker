@@ -38,4 +38,8 @@ public interface RefundRequestDao {
 	
 	// 반품 지시서 작성
 	public void insertRefundDirection(Map<String, Object> map) throws Exception;
+	
+	// 창고 번호 조회
+	public int selectWareNo(Map<String, Object> param);
+	
 }

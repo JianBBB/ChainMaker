@@ -39,9 +39,18 @@ public class RefundInfoDTO {
 	public void setRefund_note(String refund_note) {
 		this.refund_note = refund_note;
 	}
+	
+	public int getWare_no() {
+		return ware_no;
+	}
+	public void setWare_no(int ware_no) {
+		this.ware_no = ware_no;
+	}
+
 	private int refund_no;
 	private int order_no;
 	private String pro_no;
 	private int refund_qty;
 	private String refund_note;
+	private int ware_no;
 }

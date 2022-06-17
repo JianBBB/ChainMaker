@@ -1,6 +1,7 @@
 package kr.happyjob.chainmaker.epc.service;
 
 import java.util.List;
+import java.util.Map;
 
 import kr.happyjob.chainmaker.epc.model.OrderDetailDTO;
 import kr.happyjob.chainmaker.epc.model.OrderListWithQtyAndDateDTO;
@@ -23,4 +24,7 @@ public interface RefundRequestService {
 	
 	// 반품 사용자 정보 조회
 	public RefundUserInfoDTO getRefundUserInfo(RefundUserInfoDTO refundUserInfoDTO);
+	
+	//창고 번호 조회
+	public int getWareNo(Map<String, Object> param);
 }

@@ -154,4 +154,9 @@ public class RefundRequestServiceImpl implements RefundRequestService {
 		return dto;
 	}
 
+	@Override
+	public int getWareNo(Map<String, Object> param) {
+		return refundRequestDao.selectWareNo(param);
+	}
+
 }

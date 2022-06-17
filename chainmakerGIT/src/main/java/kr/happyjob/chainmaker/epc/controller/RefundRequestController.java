@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.happyjob.chainmaker.epc.model.OrderDetailDTO;
@@ -135,6 +136,7 @@ public class RefundRequestController {
 		return resultMap;
 	}
 	
+
 	
 	// 수량, 날짜 정보 가진 orderlist
 	public Map<String, Object> getOrderListWithQtyAndDate(OrdersRequestDTO ordersRequestDTO) {
@@ -191,7 +193,7 @@ public class RefundRequestController {
 		switch(type) {
 			case "refund" : {
 			
-				RefundUserInfoDTO refundUserInfoDTO = null;
+				RefundUserInfoDTO refundUserInfoDTO = new RefundUserInfoDTO();
 				
 				String loginID = (String) session.getAttribute("loginId");
 				
@@ -208,6 +210,22 @@ public class RefundRequestController {
 		return resultMap;
 	}
 	
+	
+	//제품에 맞는 ware_no 찾기
+	@RequestMapping(value= "/wareNo", method = RequestMethod.GET)
+	@ResponseBody
+	public int getWareNo(@RequestParam Map<String, Object> param){
+		int result = 0;
+		
+			
+				
+				String pro_no = (String) param.get("pro_no");
+				param.put("pro_no", pro_no);
+				result = refundRequestServiceImpl.getWareNo(param);
+				
+			
+		return result;
+	}
 	
 	
 }
